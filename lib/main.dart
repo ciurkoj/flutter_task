@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'circles.dart';
+import 'threads.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,13 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
+
+    Circles(onChange: (Offset delta) => print(delta)),
+    const Threads(),
     const Text(
       'Index 0: Home',
-      style: optionStyle,
-    ),
-    Circles(onChange: (Offset delta) => print(delta)),
-    const Text(
-      'Index 2: School',
       style: optionStyle,
     ),
   ];
@@ -57,9 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:  Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      body:  _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -68,11 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: 'Business',
+            label: 'Circles',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.three_p),
+            label: 'Threads',
           ),
         ],
         currentIndex: _selectedIndex,
