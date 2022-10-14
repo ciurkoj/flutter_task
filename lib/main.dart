@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_task/pages/movie_list_page.dart';
+import 'package:flutter_task/view%20models/movie_list_view_model.dart';
+import 'package:provider/provider.dart';
 
 import 'circles.dart';
 import 'threads.dart';
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Task Demo'),
     );
   }
 }
@@ -38,10 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Circles(onChange: (Offset delta) => print(delta)),
     const Threads(),
-    const Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    ChangeNotifierProvider<MovieListViewModel>(
+      create: (BuildContext context) => MovieListViewModel(),
+      child: MovieListPage(),
+    )
   ];
 
   void _onItemTapped(int index) {
@@ -61,15 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
             label: 'Circles',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.three_p),
+            icon: Icon(Icons.business),
             label: 'Threads',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.three_p),
+            label: 'MVVM model',
           ),
         ],
         currentIndex: _selectedIndex,
