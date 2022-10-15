@@ -1,16 +1,12 @@
 # flutter_task
 
-A new Flutter project.
+To start the project make sure you've got dart and flutter installed in your environment
 
-## Getting Started
+Please visit [https://dart.dev/get-dart](https://dart.dev/get-dart) to install dart, and
+[https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install) to install flutter
 
-This project is a starting point for a Flutter application.
+Then, plug in your phone, make sure that the file transfer is turned on and then if your environment is set up, use:
+- `flutter pub get`
+- `flutter run` 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app should start on your device
