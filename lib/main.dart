@@ -38,7 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
-
     Circles(onChange: (Offset delta) => print(delta)),
     const Threads(),
     ChangeNotifierProvider<MovieListViewModel>(
