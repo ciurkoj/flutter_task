@@ -1,9 +1,8 @@
 # flutter_task
 There are 3 tasks in this app:
-- create a circle widget that limits a pointer to a cicle
-- create a multithreading task
-- fetch and serialize data from an API
-
+* create a circle widget that limits a pointer to a circle, the widget is allowing to move an object within a circle shape
+* create a multi threading task, creates two threads where each one is taking a random time between 0 and 1000 ms to finish. The time is then printed on the screen in a list with a process id and time it took, then at the end it prints 'done'. A user can trigger multiple pairs of threads to run at the same time and then reset the list with a reset button.
+* fetch and serialize data from an API, to perform a film search the app is using a omdb api. Is an example of MVVM model in Flutter
 To start the project make sure you've got dart and flutter installed in your environment
 
 Please visit [https://dart.dev/get-dart](https://dart.dev/get-dart) to install dart, and
